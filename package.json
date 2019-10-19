@@ -1,7 +1,7 @@
 {
   "name": "express-server",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simple node api backend setup",
   "main": "index.js",
   "scripts": {
     "start": "nodemon --exec babel-node src/index.js"
@@ -20,5 +20,13 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "uuid": "^3.3.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmshanahan/node-rest-template.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jmshanahan/node-rest-template/issues"
+  },
+  "homepage": "https://github.com/jmshanahan/node-rest-template#readme"
 }

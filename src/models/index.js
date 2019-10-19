@@ -1,23 +1,17 @@
-let users = {
-  1: {
-    id: "1",
-    username: "Robin Wieruch"
-  },
-  2: {
-    id: "2",
-    username: "Dave Davids"
-  }
+import mongoose from "mongoose";
+import User from "./user";
+import Message from "./message";
+
+// const uri = `mongodb://comeraghsolutions@gmail.com:josephshanahan12@ds137368.mlab.com:37368/rwieruch`;
+const uri = `mongodb://joseph:josephshanahan12@ds137368.mlab.com:37368/rwieruch`;
+const connectDb = () => {
+  return mongoose.connect(uri, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true
+  });
 };
-let messages = {
-  1: {
-    id: "1",
-    text: "Hello World",
-    userId: "1"
-  },
-  2: {
-    id: "2",
-    text: "By World",
-    userId: "2"
-  }
-};
-export default { users, messages };
+const models = { User, Message };
+export { connectDb };
+
+export default models;

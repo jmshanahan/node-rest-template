@@ -1,9 +1,13 @@
 import { Router } from "express";
 const router = Router();
 
-router.get("/", (req, res) => res.send(req.context.models.users));
+router.get("/", async (req, res) => {
+  const users = await req.context.models.User.find();
+  res.send(users);
+});
 
-router.get("/:userId", (req, res) =>
-  res.send(req.context.models.users[req.params.userId])
-);
+router.get("/:userId", async (req, res) => {
+  const user = await req.context.models.User.findById(req.params.userId);
+  return res.send(user);
+});
 export default router;
